@@ -8,7 +8,7 @@ for score_line in range(1,len(report_list)):
     total_score = 0
     for score in range(1,len(report_list[score_line])):
         total_score += float(report_list[score_line][score])
-    aver_score = float('%.1f' % (total_score / len(report_list[score_line]) - 1))
+    aver_score = float('%.1f' % (total_score / (len(report_list[score_line]) - 1)))
     report_list[score_line].append(str(total_score))
     report_list[score_line].append(str(aver_score))
 #按平均分排序
