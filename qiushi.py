@@ -5,6 +5,7 @@ import urllib
 import re
 import thread
 import time
+import os
 
 
 def get_imgurl(first_url, page):
@@ -19,6 +20,9 @@ def get_imgurl(first_url, page):
 def download_img(imgurl):
     imghttp = 'http:' + imgurl
     imgname = imgurl.split('/')[-1]
+    isExists = os.path.exists('pics')
+    if not isExists:
+        os.mkdir('pics')
     urllib.urlretrieve(imghttp, 'pics\%s' % imgname)
     print '%s 下载完成, 用时 %f s' % (str(imgname), time.time()-start_time)
 
