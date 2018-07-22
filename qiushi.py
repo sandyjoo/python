@@ -23,12 +23,12 @@ def download_img(imgurl):
     isExists = os.path.exists('pics')
     if not isExists:
         os.mkdir('pics')
-    urllib.urlretrieve(imghttp, 'pics\%s' % imgname)
+    urllib.urlretrieve(imghttp, 'pics/%s' % imgname)
     print '%s 下载完成, 用时 %f s' % (str(imgname), time.time()-start_time)
 
 
 if __name__ == "__main__":
-    first_url = "https://www.qiushibaike.com/imgrank/"
+    first_url = r"https://www.qiushibaike.com/imgrank/"
     start_page = int(raw_input('请输入起始页：'))
     end_page = int(raw_input('请输入终止页：'))
     print '开始下载'
